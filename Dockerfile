@@ -12,4 +12,4 @@ COPY output/ output/
 ENV INPUT_FILE=input/kelenfoldig.geojson
 ENV OUTPUT_FILE=results/sin_hossz.geojson
 
-CMD ["pyton", "src/main.py"]
+CMD ["python", "src/main.py"]
