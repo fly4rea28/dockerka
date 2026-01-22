@@ -3,8 +3,9 @@ version: "3.9"
 services:
   road_length:
     build: .
-    image: eov-rail-length
-    container_name: eov_rail_length
     volumes:
-      - ./:/input
-    command: /input/kelenfoldig.geojson
+      - ./output:/app/output
+    environment:
+      INPUT_FILE: input/kelenfoldig.geojson
+      OUTPUT_GEOJSON: output/sin_hossz.geojson
+      OUTPUT_CSV: output/sin_hossza.csv

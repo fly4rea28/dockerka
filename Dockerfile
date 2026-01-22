@@ -1,6 +1,7 @@
 FROM python:3.11-slim
 
 WORKDIR /app
+COPY requirements.txt
 
 RUN pip install --no-cache-dir shapely
 
@@ -8,4 +9,7 @@ COPY src/ src/
 COPY input/ input/
 COPY output/ output/
 
-ENTRYPOINT [ "pyton", "src/main.py" ]
+ENV INPUT_FILE=input/kelenfoldig.geojson
+ENV OUTPUT_FILE=results/sin_hossz.geojson
+
+CMD ["pyton", "src/main.py"]
