@@ -1,3 +1,4 @@
-os 
-geopandas
-pandas
+geopandas 
+shapely
+fiona
+pyproj

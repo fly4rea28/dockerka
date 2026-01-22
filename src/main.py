@@ -21,13 +21,15 @@ grf["length_m"] = grf.geometry.length
 
 #teljes hossz
 teljes_hossz = grf["length_m"].sum()
+teljes_kmben = teljes_hossz / 1000
 
 #mentés
 pandas.DataFrame([{"teljes_sin_hossza": teljes_hossz}]).to_csv(OUTPUT_CSV, index=False)
 print(f"Teljes sín hossza méterben mentve: {OUTPUT_CSV}")
 
 #eredmény
-print(f"Teljes sín hossz: {teljes_hossz: .2f} meters")
+print(f"Teljes sín hossz: {teljes_hossz: .2f} méter")
+print(f"Teljes hossz km-ben: {teljes_kmben: .2f} km")
 
 
 
@@ -35,7 +37,7 @@ print(f"Teljes sín hossz: {teljes_hossz: .2f} meters")
 #korábbi próbálkozás 
 #def geometry_length(geom):
 #    if isinstance(geom, (LineString,MultiLineString)):
-        return geom.length
+#        return geom.length
 #     else:
 #         return 0.0
 #     
