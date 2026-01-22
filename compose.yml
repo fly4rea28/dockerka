@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  road_length:
+    build: .
+    image: eov-rail-length
+    container_name: eov_rail_length
+    volumes:
+      - ./:/input
+    command: /input/kelenfoldig.geojson
